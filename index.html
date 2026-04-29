@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumen — Build Better, Faster</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --border: #e5e7eb;
+    --soft: #f9fafb;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* Layout */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 10;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    color: var(--muted);
+    font-size: 15px;
+    transition: color .15s ease;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: var(--accent);
+    color: white;
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: 15px;
+    transition: background .15s ease, transform .15s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--accent-hover); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { background: var(--soft); }
+
+  /* Hero */
+  .hero {
+    padding: 96px 0 80px;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 60px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin: 0 0 20px;
+    font-weight: 700;
+  }
+  .hero p {
+    color: var(--muted);
+    font-size: 19px;
+    max-width: 620px;
+    margin: 0 auto 32px;
+  }
+  .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* Section */
+  section { padding: 80px 0; }
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .section-head h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .section-head p { color: var(--muted); margin: 0; font-size: 17px; }
+
+  /* Features */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .feature {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .feature:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: var(--soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .feature h3 { margin: 0 0 8px; font-size: 17px; }
+  .feature p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* CTA */
+  .cta {
+    background: var(--soft);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    padding: 32px 0;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .hero { padding: 64px 0 56px; }
+    section { padding: 56px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">Lumen<span>.</span></div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+    </div>
+    <a href="#contact" class="btn">Get started</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow">New — version 2.0 is here</span>
+    <h1>Build better products,<br/>faster than ever.</h1>
+    <p>Lumen gives your team the tools to ship beautiful, reliable software without the overhead. One platform for everything you build.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn">Start free trial</a>
+      <a href="#features" class="btn btn-secondary">See how it works</a>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="container">
+    <div class="section-head">
+      <h2>Everything you need</h2>
+      <p>Designed to remove friction so your team can focus on what matters.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3>Lightning fast</h3>
+        <p>Optimized from the ground up to keep your team moving without delays.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <h3>Secure by default</h3>
+        <p>Enterprise-grade security with end-to-end encryption built in.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <h3>Built to scale</h3>
+        <p>From your first user to your millionth — Lumen grows with you.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🤝</div>
+        <h3>Team-friendly</h3>
+        <p>Real-time collaboration tools that keep everyone in sync.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🧩</div>
+        <h3>Integrates everywhere</h3>
+        <p>Works with the tools you already love — no migration headaches.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💡</div>
+        <h3>Simple to use</h3>
+        <p>An intuitive interface your whole team can pick up in minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="section-head" style="margin-bottom: 24px;">
+      <h2>Ready to get started?</h2>
+      <p>Try Lumen free for 14 days. No credit card required.</p>
+    </div>
+    <div class="hero-actions">
+      <a href="#" class="btn">Start free trial</a>
+      <a href="#" class="btn btn-secondary">Talk to sales</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Lumen. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
